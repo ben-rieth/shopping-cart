@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import RouteSwitch from "./components/routing/RouteSwitch";
+import { CartContext } from "./services/context/CartContext";
+import Book from "./services/types/Book";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+const App = () => {
+
+    const [cart, setCart] = useState<Book[]>([]);
+
+    const test = (newItem: Book) => {
+        setCart(cart.concat(newItem));
+        console.log(cart);
+    }
+
+    return (
+        <CartContext.Provider 
+            value={{
+                cart, 
+                onAddItem: test,
+                onRemoveItem: (itemId: string) => setCart(cart.filter((item) => item.id !== itemId))
+            }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+            <RouteSwitch />
+        </CartContext.Provider>
+    );
 }
 
 export default App;
