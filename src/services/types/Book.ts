@@ -5,6 +5,7 @@ type Book = {
     price: number;
     imageURL: string;
     quantity?: number;
+    gridIndex?: number;
 }
 
 export default Book;
