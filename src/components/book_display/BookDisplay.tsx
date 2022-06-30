@@ -7,10 +7,10 @@ type BookProps = {
 const BookDisplay = ({ book }: BookProps) => {
 
     return (
-        <div>
-            <img src={book.imageURL} alt="cover" />
-            <p>{book.title}</p>
-            <p>{book.price}</p>
+        <div className="flex flex-col items-center">
+            <img src={book.imageURL} alt="cover" className="w-24"/>
+            <p className="font-bold">{book.title}</p>
+            <p>${book.price}</p>
         </div>
     )
 }
