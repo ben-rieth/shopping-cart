@@ -3,12 +3,13 @@ import AddToCartIcon from './../../assets/images/add_cart.svg';
 
 type BookProps = {
     book: Book;
+    onClick: () => void;
 }
 
-const BookDisplay = ({ book }: BookProps) => {
+const BookDisplay = ({ book, onClick }: BookProps) => {
 
     return (
-        <div className="flex flex-col items-center outline outline-1 p-4 outline-slate-300 relative">
+        <div onClick={onClick} className="flex flex-col items-center outline outline-1 p-4 outline-slate-300 relative">
             <img src={book.imageURL} alt="cover" className="w-24"/>
             <p className="font-bold">{book.title}</p>
             <p>${book.price}</p>
