@@ -8,6 +8,7 @@ const BookDisplay = ({ book }: BookProps) => {
 
     return (
         <div>
+            <img src={book.imageURL} alt="cover" />
             <p>{book.title}</p>
             <p>{book.price}</p>
         </div>
