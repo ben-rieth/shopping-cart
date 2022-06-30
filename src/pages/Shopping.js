@@ -6,7 +6,7 @@ const Shopping = () => {
     return (
         <div>
             <Header />
-            <div>
+            <div className="grid grid-cols-2">
                 {availableBooks.map((book) => {
                     return <BookDisplay key={book.title} book={book}/>
                 })}
