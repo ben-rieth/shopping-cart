@@ -10,7 +10,7 @@ const Sidebar = ({isVisible, onCloseClick}: Props) => {
     const visibleTransition = isVisible ? "translate-x-0" : "-translate-x-full";
 
     return (
-        <div className={`flex flex-col absolute z-50 bg-slate-500 top-0 h-screen transition-transform ease-in ${visibleTransition}`}>
+        <div className={`flex flex-col absolute z-50 bg-slate-500 top-0 h-screen transition-transform ease-in-out ${visibleTransition}`}>
             <a href="/">Home</a>
             <a href="/shop">Browse</a>
             <a href="/contact">Contact</a>
