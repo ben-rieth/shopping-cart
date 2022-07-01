@@ -8,7 +8,7 @@ type BookProps = {
 
 const BookDisplay = ({book}: BookProps) => {
 
-    const bookPage = `/shop/${book.title}/${book.id}`;
+    const bookPage = `/browse/${book.title}/${book.id}`;
 
     return (
         <div className="flex flex-col items-center outline outline-1 p-4 outline-slate-300 relative z-10">

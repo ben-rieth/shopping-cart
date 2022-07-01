@@ -9,7 +9,7 @@ function Home() {
       <Header />
       <div className="flex flex-col items-center mt-[30vh]">
         <h2 className="text-center text-2xl">Ready to find a new favorite?</h2>
-        <Link to="/shop">
+        <Link to="/browse">
           <Button text="Browse"/>
         </Link>
       </div>
