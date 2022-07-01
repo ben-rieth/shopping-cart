@@ -4,11 +4,12 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Header from "./Header";
 import{BrowserRouter} from 'react-router-dom';
+import { CartContext } from "../../services/context/CartContext";
 
 describe("Header component", () => {
 
     it("renders header text and menu image", () => {
-        render(<BrowserRouter><Header /></BrowserRouter>);
+        render(<CartContext.Provider value={{cart: []}}><BrowserRouter><Header /></BrowserRouter></CartContext.Provider>);
 
         const header = screen.getByRole("heading");
         const menuImg = screen.getByAltText("menu");
@@ -20,7 +21,7 @@ describe("Header component", () => {
     });
 
     it("opens sidebar when menu button is pressed", () => {
-        render(<BrowserRouter><Header /></BrowserRouter>);
+        render(<CartContext.Provider value={{cart: []}}><BrowserRouter><Header /></BrowserRouter></CartContext.Provider>);
 
         const menuBtn = screen.getByAltText("menu");
 

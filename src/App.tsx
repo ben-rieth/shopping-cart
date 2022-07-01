@@ -9,7 +9,6 @@ const App = () => {
 
     const test = (newItem: Book) => {
         setCart(cart.concat(newItem));
-        console.log(cart);
     }
 
     return (
