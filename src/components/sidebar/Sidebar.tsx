@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import CloseIcon from './../../assets/images/close.svg';
 
 type Props = {
@@ -11,9 +12,9 @@ const Sidebar = ({isVisible, onCloseClick}: Props) => {
 
     return (
         <div className={`flex flex-col absolute z-50 bg-slate-500 top-0 h-screen transition-transform ease-in-out ${visibleTransition}`}>
-            <a href="/">Home</a>
-            <a href="/shop">Browse</a>
-            <a href="/contact">Contact</a>
+            <Link to="/">Home</Link>
+            <Link to="/shop">Browse</Link>
+            <Link to="/contact">Contact</Link>
             {isVisible ?
                 <img className="absolute -right-12" alt="close" src={CloseIcon} onClick={onCloseClick}/> : ""
             }
