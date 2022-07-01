@@ -14,7 +14,7 @@ const Header = () => {
                 <img src={ShoppingBagIcon} alt="bag" className="cursor-pointer"/>
             </div>
             <Sidebar isVisible={sidebarVisible} onCloseClick={() => setSidebarVisible(false)}/>
-            <div className={`absolute top-0 left-0 ${sidebarVisible ? "bg-[rgba(0,0,0,0.6)] w-screen h-screen" : ""}`}></div>
+            <div className={`absolute top-0 left-0 z-40 ${sidebarVisible ? "bg-[rgba(0,0,0,0.6)] w-screen h-screen" : ""}`}></div>
         </div>
     );
 }

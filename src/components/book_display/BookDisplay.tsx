@@ -9,7 +9,7 @@ type BookProps = {
 const BookDisplay = ({ book, onClick }: BookProps) => {
 
     return (
-        <div onClick={onClick} className="flex flex-col items-center outline outline-1 p-4 outline-slate-300 relative">
+        <div onClick={onClick} className="flex flex-col items-center outline outline-1 p-4 outline-slate-300 relative z-10">
             <img src={book.imageURL} alt="cover" className="w-24"/>
             <p className="font-bold text-center text-sm">{book.title}</p>
             <p>${book.price}</p>

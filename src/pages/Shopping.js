@@ -7,7 +7,6 @@ const Shopping = () => {
         <div>
             <Header />
             <BookGrid books={availableBooks} />
-            
         </div>
     )
 }
