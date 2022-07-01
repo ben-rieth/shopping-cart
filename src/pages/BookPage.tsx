@@ -8,7 +8,7 @@ const BookPage = () => {
 
     const params = useParams();
 
-    const book = availableBooks.find(item => item.title === params.title && item.id === params.id);
+    const book = availableBooks.find(item => item.title === params.bookTitle && item.id === params.bookId);
 
     if (book) {
         return (
