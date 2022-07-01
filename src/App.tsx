@@ -7,16 +7,12 @@ const App = () => {
 
     const [cart, setCart] = useState<Book[]>([]);
 
-    const test = (newItem: Book) => {
-        setCart(cart.concat(newItem));
-    }
-
     return (
         <CartContext.Provider 
             value={{
                 cart, 
-                onAddItem: test,
-                onRemoveItem: (itemId: string) => setCart(cart.filter((item) => item.id !== itemId))
+                addCartItem: (newItem: Book) => setCart(cart.concat(newItem)),
+                removeCartItem: (itemId: string) => setCart(cart.filter((item) => item.id !== itemId))
             }}
         >
             <RouteSwitch />
