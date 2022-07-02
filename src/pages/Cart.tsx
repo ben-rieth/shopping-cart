@@ -24,7 +24,7 @@ const Cart = () => {
                     <h2 className="text-center">No Items in Your Cart</h2>
                 }
             </div> 
-            <BookGrid books={cart} />
+            <BookGrid books={cart} isCart={true}/>
         </div>
     )
 }
