@@ -18,7 +18,8 @@ const BookCartDisplay = ({book}: BookProps) => {
             <QuantityAdjuster 
                 initialQuantity={book.quantity!}
                 onAddPress={() => changeItemQuantity(book, book.quantity! + 1)}
-                onRemovePress={() => changeItemQuantity(book, book.quantity! - 1)}/>
+                onRemovePress={() => changeItemQuantity(book, book.quantity! - 1)}
+                onInputChange={(event) => changeItemQuantity(book, Number(event.target.value))}/>
         </div>
     )
 }
