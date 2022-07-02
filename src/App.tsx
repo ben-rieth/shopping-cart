@@ -24,8 +24,6 @@ const App = () => {
             newItem.quantity = 1;
             setCart(cart.concat(newItem))
         }
-
-        console.log(cart);
     }
 
     return (
