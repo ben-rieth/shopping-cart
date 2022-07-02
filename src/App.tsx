@@ -26,11 +26,24 @@ const App = () => {
         }
     }
 
+    const changeItemQuantity = (selectedItem: Book, newQuantity: number) => {
+        setCart(
+            cart.map((item) => {
+                if (item.id === selectedItem.id) {
+                    item.quantity = newQuantity;
+                }
+
+                return item;
+            })
+        )
+    }
+
     return (
         <CartContext.Provider 
             value={{
                 cart, 
                 addCartItem,
+                changeItemQuantity,
                 removeCartItem: (itemId: string) => setCart(cart.filter((item) => item.id !== itemId))
             }}
         >
