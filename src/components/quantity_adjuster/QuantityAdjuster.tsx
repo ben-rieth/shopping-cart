@@ -6,7 +6,7 @@ type Props = {
     initialQuantity: number;
     onAddPress: () => void;
     onRemovePress: () => void;
-    onInputChange: (event: ChangeEvent<HTMLInputElement>) => void;
+    onInputChange: (newQuantity: number) => void;
 }
 
 const QuantityAdjuster = ({initialQuantity, onAddPress, onRemovePress, onInputChange}: Props) => {
@@ -15,7 +15,7 @@ const QuantityAdjuster = ({initialQuantity, onAddPress, onRemovePress, onInputCh
         if (/\D+/.test(event.target.value)) {
             event.preventDefault();
         } else {
-            onInputChange(event);
+            onInputChange(Number(event.target.value));
         }
     }
 

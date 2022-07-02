@@ -19,7 +19,7 @@ const BookCartDisplay = ({book}: BookProps) => {
                 initialQuantity={book.quantity!}
                 onAddPress={() => changeItemQuantity(book, book.quantity! + 1)}
                 onRemovePress={() => changeItemQuantity(book, book.quantity! - 1)}
-                onInputChange={(event) => changeItemQuantity(book, Number(event.target.value))}/>
+                onInputChange={(newQuantity) => changeItemQuantity(book, newQuantity)}/>
         </div>
     )
 }
