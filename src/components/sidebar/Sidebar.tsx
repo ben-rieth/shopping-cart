@@ -15,9 +15,10 @@ const Sidebar = ({isVisible, onCloseClick}: Props) => {
             <SidebarLink linkTo="/" text="Home"/>
             <SidebarLink linkTo="/browse" text="Browse" />
             <SidebarLink linkTo="/contact" text="Contact" />
-            {isVisible ?
-                <img className="absolute -right-12" alt="close" src={CloseIcon} onClick={onCloseClick}/> : ""
-            }
+            <img src={CloseIcon} 
+                alt="close" 
+                onClick={onCloseClick} 
+                className={`absolute -right-12 ${isVisible ? "" : "hidden"}`}/>
         </div>
     )
 }
