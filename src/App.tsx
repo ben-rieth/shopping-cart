@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { isTemplateExpression } from "typescript";
 import RouteSwitch from "./components/routing/RouteSwitch";
 import { CartContext } from "./services/context/CartContext";
 import Book from "./services/types/Book";
@@ -27,15 +28,19 @@ const App = () => {
     }
 
     const changeItemQuantity = (selectedItem: Book, newQuantity: number) => {
-        setCart(
-            cart.map((item) => {
-                if (item.id === selectedItem.id) {
-                    item.quantity = newQuantity;
-                }
+        if (newQuantity > 0) {
+            setCart(
+                cart.map((item) => {
+                    if (item.id === selectedItem.id) {
+                        item.quantity = newQuantity;
+                    }
 
-                return item;
-            })
-        )
+                    return item;
+                })
+            )
+        } else {
+            setCart(cart.filter((item) => item.id !== selectedItem.id))
+        }
     }
 
     return (
