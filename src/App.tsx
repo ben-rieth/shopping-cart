@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { isTemplateExpression } from "typescript";
 import RouteSwitch from "./components/routing/RouteSwitch";
 import { CartContext } from "./services/context/CartContext";
 import Book from "./services/types/Book";
@@ -49,7 +48,7 @@ const App = () => {
                 cart, 
                 addCartItem,
                 changeItemQuantity,
-                removeCartItem: (itemId: string) => setCart(cart.filter((item) => item.id !== itemId))
+                removeCartItem: (itemToRemove: Book) => setCart(cart.filter((item) => item.id !== itemToRemove.id))
             }}
         >
             <RouteSwitch />

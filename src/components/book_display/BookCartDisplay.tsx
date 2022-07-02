@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { CartContext } from '../../services/context/CartContext';
+import Button from '../button/Button';
 import QuantityAdjuster from '../quantity_adjuster/QuantityAdjuster';
 import Book from './../../services/types/Book';
 
@@ -8,7 +9,7 @@ type BookProps = {
 }
 
 const BookCartDisplay = ({book}: BookProps) => {
-    const {changeItemQuantity} = useContext(CartContext);
+    const {changeItemQuantity, removeCartItem} = useContext(CartContext);
 
     return (
         <div className="flex flex-col items-center outline outline-1 p-4 outline-slate-300 relative z-10">
@@ -20,6 +21,7 @@ const BookCartDisplay = ({book}: BookProps) => {
                 onAddPress={() => changeItemQuantity(book, book.quantity! + 1)}
                 onRemovePress={() => changeItemQuantity(book, book.quantity! - 1)}
                 onInputChange={(newQuantity) => changeItemQuantity(book, newQuantity)}/>
+            <Button text="Remove" onClick={() => removeCartItem(book)}/>
         </div>
     )
 }

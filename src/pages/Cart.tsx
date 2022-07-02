@@ -7,7 +7,7 @@ import Button from "../components/button/Button";
 import Book from "../services/types/Book";
 
 const Cart = () => {
-    const { cart, addCartItem, removeCartItem} = useContext(CartContext);
+    const { cart } = useContext(CartContext);
 
     const cartTotal : number = cart.reduce((prev: number, curr: Book) => prev + (curr.price * curr.quantity!), 0)
 
