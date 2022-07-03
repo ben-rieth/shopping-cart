@@ -1,6 +1,6 @@
 import Header from "../components/header/Header";
-import availableBooks from './../utils/AvailableBooks';
-import BookGrid from './../components/book_grid/BookGrid';
+import availableBooks from '../utils/AvailableBooks';
+import BookGrid from '../components/book_grid/BookGrid';
 
 const Shopping = () => {
     return (

@@ -18,7 +18,6 @@ function Home() {
           <Button text="Browse"/>
         </Link>
       </div>
-
       <ImageLoader urls={[AddIcon, RemoveIcon, DeleteIcon]} />
     </div>
   );

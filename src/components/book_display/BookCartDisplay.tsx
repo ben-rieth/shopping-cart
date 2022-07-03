@@ -4,11 +4,11 @@ import Button from '../button/Button';
 import QuantityAdjuster from '../quantity_adjuster/QuantityAdjuster';
 import Book from './../../services/types/Book';
 
-type BookProps = {
+type Props = {
     book: Book;
 }
 
-const BookCartDisplay = ({book}: BookProps) => {
+const BookCartDisplay = ({book}: Props) => {
     const {changeItemQuantity, removeCartItem} = useContext(CartContext);
 
     return (
