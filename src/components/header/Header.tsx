@@ -10,7 +10,7 @@ const Header = () => {
         <div className="relative">
             <div className="flex items-center justify-between px-3 py-2 bg-red-700">
                 <img src={MenuIcon} alt="menu" className="cursor-pointer" onClick={() => setSidebarVisible(true)}/>
-                <h1 className="text-3xl">New Leaf Books</h1>
+                <h1 className="text-3xl font-merienda">New Leaf Books</h1>
                 <CartIcon />
             </div>
             <Sidebar isVisible={sidebarVisible} onCloseClick={() => setSidebarVisible(false)}/>
