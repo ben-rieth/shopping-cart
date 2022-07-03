@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
-import Button from "../components/button/Button.tsx";
+import Button from "../components/button/Button";
 import Header from "../components/header/Header";
+
+import ImageLoader from '../components/image_loader/ImageLoader';
+import AddIcon from './../assets/images/add.svg';
+import RemoveIcon from './../assets/images/remove.svg';
+import DeleteIcon from './../assets/images/delete.svg';
 
 function Home() {
 
@@ -13,6 +18,8 @@ function Home() {
           <Button text="Browse"/>
         </Link>
       </div>
+
+      <ImageLoader urls={[AddIcon, RemoveIcon, DeleteIcon]} />
     </div>
   );
 }
