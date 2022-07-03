@@ -8,7 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-      
+      backgroundImage: {
+        'home': "url('/src/assets/images/bookstore.jpg')"
+      }
     },
     fontFamily: {
       'merienda': ["merienda", ...defaultTheme.fontFamily.sans],

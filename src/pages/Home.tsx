@@ -11,10 +11,10 @@ import BookIcon from './../assets/images/book.svg';
 function Home() {
 
   return (
-    <div>
+    <div className="w-screen h-screen bg-home bg-center bg-cover">
       <Header />
-      <div className="flex flex-col items-center mt-[30vh]">
-        <h2 className="text-center text-2xl">Ready to find a new favorite?</h2>
+      <div className="flex flex-col items-center mt-48 py-5 bg-black/30">
+        <h2 className="text-center text-2xl text-white font-merienda">Ready to find a new favorite?</h2>
         <Link to="/browse">
           <Button text="Browse"/>
         </Link>
