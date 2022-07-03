@@ -25,7 +25,7 @@ const QuantityAdjuster = ({initialQuantity, onAddPress, onRemovePress, onInputCh
             <button>
                 <img src={initialQuantity === 1 ? DeleteIcon : RemoveIcon} 
                     alt="remove" 
-                    className="w-10" 
+                    className="w-10 h-10" 
                     onClick={onRemovePress}/>
             </button>
             <input 
@@ -36,7 +36,7 @@ const QuantityAdjuster = ({initialQuantity, onAddPress, onRemovePress, onInputCh
             <button>
                 <img src={AddIcon} 
                     alt="remove" 
-                    className="w-10" 
+                    className="w-10 h-10" 
                     onClick={onAddPress}/>
             </button>
         </div>
