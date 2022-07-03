@@ -29,7 +29,7 @@ const BookPage = () => {
                 <div className="flex flex-col items-center">
                     <h2 className="text-3xl">{book.title}</h2>
                     <p className="text-xl">{book.author}</p>
-                    <img src={book.imageURL} alt="cover" className="w-36 my-2" />
+                    <img src={book.imageURL} alt="cover" className="w-36 h-56 my-2" />
                     <p className="text-xl my-1">${book.price}</p>
                     <Button text="Add to Cart" onClick={addToCartClick}/>
                 </div>
