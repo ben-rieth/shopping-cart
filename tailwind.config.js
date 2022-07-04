@@ -10,7 +10,10 @@ module.exports = {
     extend: {
       backgroundImage: {
         'home': "url('/src/assets/images/bookstore.jpg')"
-      }
+      },
+      screens: {
+        'sm': '530px',
+      },
     },
     fontFamily: {
       'merienda': ["merienda", ...defaultTheme.fontFamily.sans],
