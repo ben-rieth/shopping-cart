@@ -12,7 +12,7 @@ const CartIcon = () => {
     return (
         <div className="relative" onClick={() => navigate("/cart")}>
             <img src={ShoppingBagIcon} alt="bag" className="cursor-pointer"/>
-            <p className="absolute top-2/3 left-1/2 -translate-x-1/2 -translate-y-2/3 text-center text-lg pointer-events-none">{cartSize}</p>
+            <p className="absolute top-2/3 left-1/2 -translate-x-1/2 -translate-y-2/3 text-center text-lg font-merienda pointer-events-none">{cartSize}</p>
         </div>
     );
 }

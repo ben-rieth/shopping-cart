@@ -6,7 +6,12 @@ type ButtonProps = {
 const Button = ({text, onClick = () => {return}}: ButtonProps) => {
 
     return (
-        <button onClick={onClick} className="border-2 border-white font-merienda text-white rounded text-xl px-6 hover:scale-105">{text}</button>
+        <button 
+            onClick={onClick} 
+            className="font-merienda rounded text-xl px-12 py-2 hover:scale-105 bg-gradient-to-tl from-[#F2BF5E] via-[#F28705] to-[#B91C1C]"
+        >
+            {text}
+        </button>
     )
 }
 
