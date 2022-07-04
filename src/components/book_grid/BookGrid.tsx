@@ -10,7 +10,7 @@ type BookGridProps = {
 const BookGrid = ({books, isCart=false} : BookGridProps) => {
 
     return (
-        <div className="grid grid-cols-2 auto-rows-min m-4">
+        <div className="grid grid-cols-2 auto-rows-min p-4">
             {books.map((book, index) => {
                 return isCart ?
                     <BookCartDisplay 
