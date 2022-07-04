@@ -11,8 +11,8 @@ const CartIcon = () => {
 
     return (
         <div className="relative" onClick={() => navigate("/cart")}>
-            <img src={ShoppingBagIcon} alt="bag" className="cursor-pointer"/>
-            <p className="absolute top-3/4 left-1/2 -translate-x-1/2 -translate-y-3/4 text-center text-lg font-merienda pointer-events-none">{cartSize}</p>
+            <img src={ShoppingBagIcon} alt="bag" className="cursor-pointer w-12 xl:w-16"/>
+            <p className="absolute top-3/4 left-1/2 -translate-x-1/2 -translate-y-3/4 text-center text-lg xl:text-3xl font-merienda pointer-events-none">{cartSize}</p>
         </div>
     );
 }

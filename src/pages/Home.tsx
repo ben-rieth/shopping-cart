@@ -11,9 +11,9 @@ import BookIcon from './../assets/images/book.svg';
 function Home() {
 
   return (
-    <div className="w-screen h-screen bg-home bg-center bg-cover">
+    <div className="w-screen h-screen bg-home bg-cover bg-[center_top] md:bg-contain">
       <Header />
-      <div className="flex flex-col items-center gap-3 mt-48 py-5 bg-black/30">
+      <div className="flex flex-col items-center gap-3 mt-48 py-5 bg-black/30 relative">
         <h2 className="text-center text-3xl text-white font-merienda">Ready to discover a new favorite?</h2>
         <Link to="/browse">
           <Button text="Browse"/>
