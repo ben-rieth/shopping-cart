@@ -12,12 +12,12 @@ const BookDisplay = ({book}: BookProps) => {
     return (
         <div className="flex flex-col items-center outline outline-1 p-4 outline-slate-300 relative z-10">
             <Link to={bookPage}>
-                <img src={book.imageURL} alt="cover" className="w-24 h-36"/>
+                <img src={book.imageURL} alt="cover" className="w-24 h-36 lg:w-32 lg:h-52"/>
             </Link>
             <Link to={bookPage}>
-                <p className="font-bold text-center text-sm">{book.title}</p>
+                <p className="font-bold text-center text-md leading-tight lg:text-lg">{book.title}</p>
             </Link>
-            <p>${book.price}</p>
+            <p className="lg:text-lg">${book.price}</p>
             <div className="absolute top-0 right-0 hidden">
                 <img src={AddToCartIcon} alt="cart" className="w-8" />
             </div>
