@@ -11,6 +11,12 @@ module.exports = {
       backgroundImage: {
         'home': "url('/src/assets/images/bookstore.jpg')"
       },
+      lineClamp: {
+        7: '7',
+        8: '8',
+        9: '9',
+        10: '10'
+      },
       screens: {
         'sm': '530px',
       },
@@ -19,5 +25,7 @@ module.exports = {
       'merienda': ["merienda", ...defaultTheme.fontFamily.sans],
     }
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp')
+  ],
 }
