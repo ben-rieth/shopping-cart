@@ -12,7 +12,8 @@ const BookCartDisplay = ({book}: Props) => {
     const {changeItemQuantity, removeCartItem} = useContext(CartContext);
 
     return (
-        <div className="outline outline-1 p-4 outline-slate-300 col-span-full relative z-10 flex flex-col lg:flex-row lg:justify-between">
+        <article data-cy="cart-item-listing"
+            className="outline outline-1 p-4 outline-slate-300 col-span-full relative z-10 flex flex-col lg:flex-row lg:justify-between">
             <div className="flex gap-5">
                 <img src={book.imageURL} alt="cover" className="w-16 lg:w-28"/>
                 <div className="flex flex-col">
@@ -28,7 +29,7 @@ const BookCartDisplay = ({book}: Props) => {
                     onInputChange={(newQuantity) => changeItemQuantity(book, newQuantity)}/>
                 <Button text="Remove" onClick={() => removeCartItem(book)}/>
             </div>
-        </div>
+        </article>
     )
 }
 

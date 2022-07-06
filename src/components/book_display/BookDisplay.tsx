@@ -10,7 +10,7 @@ const BookDisplay = ({book}: BookProps) => {
     const bookPage = `/browse/${book.title}/${book.id}`;
 
     return (
-        <div className="flex flex-col gap-1 items-center outline outline-1 p-4 outline-slate-300 relative z-10">
+        <article className="flex flex-col gap-1 items-center outline outline-1 p-4 outline-slate-300 relative z-10">
             <Link to={bookPage}>
                 <img src={book.imageURL} alt="cover" className="w-24 h-36 lg:w-32 lg:h-52"/>
             </Link>
@@ -22,7 +22,7 @@ const BookDisplay = ({book}: BookProps) => {
             <div className="absolute top-0 right-0 hidden">
                 <img src={AddToCartIcon} alt="cart" className="w-8" />
             </div>
-        </div>
+        </article>
     )
 }
 

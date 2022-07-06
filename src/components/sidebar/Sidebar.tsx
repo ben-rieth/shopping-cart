@@ -14,20 +14,25 @@ const Sidebar = ({isVisible, onCloseClick}: Props) => {
     const visibleTransition = isVisible ? "translate-x-0" : "-translate-x-full";
 
     return (
-        <div className={`flex flex-col gap-3 pt-3 pl-3 w-2/3 max-w-sm absolute z-50 bg-[#F2F2F2] top-0 h-screen transition-transform ease-in-out ${visibleTransition}`}>
-            <p 
-                className="text-2xl border-b-2 border-black font-merienda w-full text-transparent bg-clip-text bg-gradient-to-tl from-[#F28705] to-[#B91C1C]"
-            >
-                New Leaf Books
-            </p>
-            <SidebarLink linkTo="/" text="Home" icon={HomeIcon}/>
-            <SidebarLink linkTo="/browse" text="Browse" icon={ShopIcon}/>
-            <SidebarLink linkTo="/contact" text="Contact" icon={ContactIcon}/>
-            <img src={CloseIcon} 
-                alt="close" 
-                onClick={onCloseClick} 
-                className={`absolute -right-12 top-0 cursor-pointer ${isVisible ? "" : "hidden"}`}/>
-        </div>
+        <>
+            <aside className={`flex flex-col gap-3 pt-3 pl-3 w-2/3 max-w-sm absolute h-screen z-50 bg-[#F2F2F2] top-0 transition-transform ease-in-out ${visibleTransition}`}>
+                <p 
+                    className="text-2xl border-b-2 border-black font-merienda w-full text-transparent bg-clip-text bg-gradient-to-tl from-[#F28705] to-[#B91C1C]"
+                >
+                    New Leaf Books
+                </p>
+                <SidebarLink linkTo="/" text="Home" icon={HomeIcon}/>
+                <SidebarLink linkTo="/browse" text="Browse" icon={ShopIcon}/>
+                <SidebarLink linkTo="/contact" text="Contact" icon={ContactIcon}/>
+                <img src={CloseIcon} 
+                    alt="close" 
+                    onClick={onCloseClick} 
+                    className={`absolute -right-12 top-0 cursor-pointer ${isVisible ? "" : "hidden"}`}/>
+            </aside>
+            <div onClick={onCloseClick} 
+                className={`absolute top-0 left-0 z-40 
+                            ${isVisible ? "bg-[rgba(0,0,0,0.6)] w-screen h-screen" : ""}`}/>
+        </>
     )
 }
 
