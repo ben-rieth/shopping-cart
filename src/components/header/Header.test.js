@@ -1,6 +1,6 @@
 import React from "react";
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
+import { render, screen} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Header from "./Header";
 import{BrowserRouter} from 'react-router-dom';
@@ -21,13 +21,38 @@ describe("Header component", () => {
     });
 
     it("opens sidebar when menu button is pressed", () => {
-        render(<CartContext.Provider value={{cart: []}}><BrowserRouter><Header /></BrowserRouter></CartContext.Provider>);
+        render(
+            <CartContext.Provider value={{cart: []}}>
+                <BrowserRouter>
+                    <Header />
+                </BrowserRouter>
+            </CartContext.Provider>
+        );
 
         const menuBtn = screen.getByAltText("menu");
 
         userEvent.click(menuBtn);
 
-        expect(screen.getByRole('complementary')).toBeInTheDocument();
-        expect(screen.getByAltText("close")).toBeInTheDocument();
+        expect(screen.getByRole('complementary')).toHaveClass('translate-x-0');
+        expect(screen.getByAltText("close")).not.toHaveClass('hidden');
     });
+
+    it("closes sidebar when close button is pressed", async () => {
+        render(
+            <CartContext.Provider value={{cart: []}}>
+                <BrowserRouter>
+                    <Header />
+                </BrowserRouter>
+            </CartContext.Provider>
+        );
+
+        const sidebar = screen.getByRole('complementary');
+        const closeBtn = screen.getByAltText('close');
+
+        userEvent.click(closeBtn);
+
+        expect(sidebar).toHaveClass('-translate-x-full');
+        expect(closeBtn).toHaveClass('hidden');
+
+    })
 });
