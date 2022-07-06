@@ -23,7 +23,7 @@ const Cart = () => {
                         <h2 className="text-xl lg:text-3xl">
                             Subtotal:&nbsp; 
                             <span className="font-bold">
-                                ${cartTotal}
+                                ${cartTotal.toFixed(2)}
                             </span>
                         </h2>
                         <Button text="Proceed to Checkout" />
