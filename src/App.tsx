@@ -15,14 +15,22 @@ const App = () => {
             setCart(
                 cart.map((item) => {
                     if (item.id === newItem.id) {
-                        item.quantity! += 1;
+
+                        if(newItem.quantity) {
+                            item.quantity! += newItem.quantity;
+                        } else {
+                            item.quantity! += 1;
+                        }
                     }
                     return item;
                 })
             )
         } else {
-            newItem.quantity = 1;
-            setCart(cart.concat(newItem))
+            if (!newItem.quantity) {
+                newItem.quantity = 1;
+            }
+            setCart(cart.concat(newItem));   
+            
         }
     }
 

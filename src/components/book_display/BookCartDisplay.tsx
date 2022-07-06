@@ -24,8 +24,6 @@ const BookCartDisplay = ({book}: Props) => {
             <div className="flex items-center mt-4 gap-5 lg:flex-col">
                 <QuantityAdjuster 
                     initialQuantity={book.quantity!}
-                    onAddPress={() => changeItemQuantity(book, book.quantity! + 1)}
-                    onRemovePress={() => changeItemQuantity(book, book.quantity! - 1)}
                     onInputChange={(newQuantity) => changeItemQuantity(book, newQuantity)}/>
                 <Button text="Remove" onClick={() => removeCartItem(book)}/>
             </div>

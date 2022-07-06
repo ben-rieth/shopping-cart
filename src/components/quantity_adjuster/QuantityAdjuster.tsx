@@ -5,12 +5,10 @@ import DeleteIcon from './../../assets/images/delete.svg';
 
 type Props = {
     initialQuantity: number;
-    onAddPress: () => void;
-    onRemovePress: () => void;
     onInputChange: (newQuantity: number) => void;
 }
 
-const QuantityAdjuster = ({initialQuantity, onAddPress, onRemovePress, onInputChange}: Props) => {
+const QuantityAdjuster = ({initialQuantity, onInputChange}: Props) => {
 
     const [value, setValue] = useState<number>(initialQuantity);
 
@@ -24,12 +22,12 @@ const QuantityAdjuster = ({initialQuantity, onAddPress, onRemovePress, onInputCh
 
     const addOneToValue = () => {
         setValue(value + 1);
-        onAddPress();
+        onInputChange(value + 1);
     }
 
     const removeOneFromValue = () => {
         setValue(value - 1);
-        onRemovePress();
+        onInputChange(value - 1);
     }
 
     const blurIfEnterPress = (event: KeyboardEvent) => {

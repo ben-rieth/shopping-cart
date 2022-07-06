@@ -1,7 +1,8 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { useParams, useNavigate } from 'react-router';
 import Button from '../components/button/Button';
 import CartSidebar from '../components/cart_sidebar/CartSidebar';
+import QuantityAdjuster from '../components/quantity_adjuster/QuantityAdjuster';
 import { CartContext } from '../services/context/CartContext';
 import Book from '../services/types/Book';
 import availableBooks from '../utils/AvailableBooks';
@@ -11,6 +12,8 @@ import Header from './../components/header/Header';
 
 const BookPage = () => {
 
+    const [quantity, setQuantity] = useState<number>(1);
+
     const params = useParams();
     const navigate = useNavigate();
 
@@ -19,7 +22,8 @@ const BookPage = () => {
     const book : Book | undefined = availableBooks.find(item => item.title === params.bookTitle && item.id === params.bookId);
 
     const addToCartClick = () => {
-        addCartItem(book)
+        const bookWithQuantity = {...book, quantity: quantity};
+        addCartItem(bookWithQuantity);
         navigate(-1);
     }
 
@@ -52,7 +56,13 @@ const BookPage = () => {
                                         {/* "md:col-start-3 md:row-start-1 md:row-span-3 md:place-self-center md:my-2"> */}
 
                             <p className="text-3xl text-center my-1 font-merienda">${book.price}</p>
-                            <Button text="Add to Cart" onClick={addToCartClick}/>
+                            <div className="flex flex-col gap-5 justify-center md:flex-row">
+                                <QuantityAdjuster 
+                                    initialQuantity={quantity} 
+                                    onInputChange={(newQuantity) => setQuantity(newQuantity)}/>
+                                <Button text="Add to Cart" onClick={addToCartClick}/>
+                            </div>
+                            
 
                         </div>
 
