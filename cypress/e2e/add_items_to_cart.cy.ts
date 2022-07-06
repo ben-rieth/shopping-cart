@@ -30,5 +30,27 @@ describe('Testing User Adding an Item to Cart', () => {
 
     cy.contains('button', 'Continue Shopping').click();
     cy.url().should('include', '/browse');
-  })
+  });
+
+  it('can add multiple items to the cart', () => {
+    cy.visit('localhost:3000');
+    cy.contains('button', 'Browse').click();
+
+    cy.contains('Don Quixote').click();
+    cy.contains('button', 'Add to Cart').click();
+    cy.get('[data-cy="cart-icon"]').as('cartIcon').contains("1");
+
+    cy.contains('Nineteen Eighty Four').click();
+    cy.contains('button', 'Add to Cart').click()
+    cy.get('@cartIcon').contains("2");
+
+    cy.contains('East of Eden').click();
+    cy.contains('button', 'Add to Cart').click();
+    cy.get('@cartIcon').contains("3");
+
+    cy.get('@cartIcon').click();
+    cy.get('[data-cy="cart-item-listing"]').should('have.length', 3);
+
+
+  });
 })
