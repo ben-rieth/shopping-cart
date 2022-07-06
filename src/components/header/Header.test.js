@@ -27,6 +27,7 @@ describe("Header component", () => {
 
         userEvent.click(menuBtn);
 
+        expect(screen.getByRole('complementary')).toBeInTheDocument();
         expect(screen.getByAltText("close")).toBeInTheDocument();
     });
 });
