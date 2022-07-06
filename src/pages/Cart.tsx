@@ -20,7 +20,12 @@ const Cart = () => {
             <div className="flex flex-col justify-center items-center my-4 px-5 gap-2">
                 {cart.length > 0 ?
                     <>
-                        <h2>Subtotal: ${cartTotal}</h2>
+                        <h2 className="text-xl lg:text-3xl">
+                            Subtotal:&nbsp; 
+                            <span className="font-bold">
+                                ${cartTotal}
+                            </span>
+                        </h2>
                         <Button text="Proceed to Checkout" />
                     </>
                     : 
