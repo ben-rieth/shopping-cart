@@ -10,7 +10,7 @@ type BookGridProps = {
 const BookGrid = ({books, isCart=false} : BookGridProps) => {
 
     return (
-        <div className={`grid grid-cols-2 auto-rows-min py-4 px-10 mx-auto ${isCart ? 'max-w-7xl' : 'max-w-screen-2xl'}
+        <main className={`grid grid-cols-2 auto-rows-min py-4 px-10 mx-auto ${isCart ? 'max-w-7xl' : 'max-w-screen-2xl'}
                         sm:grid-cols-3 md:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7`}>
             {books.map((book, index) => {
                 return isCart ?
@@ -22,7 +22,7 @@ const BookGrid = ({books, isCart=false} : BookGridProps) => {
                         key={book.title} 
                         book={{...book, gridIndex: index}} />
             })}
-        </div>
+        </main>
     );
 }
 
