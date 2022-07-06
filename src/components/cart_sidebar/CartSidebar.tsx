@@ -15,7 +15,7 @@ const CartSidebar = () => {
                 <div className="absolute top-8 -left-[11px] w-0 h-0 border-y-[10px] border-y-transparent border-r-[10px] border-r-white"/>
                 <div className="flex flex-col items-center gap-5 h-screen py-5 overflow-y-auto">
                     <div className="text-center" key="subtotal-sidebar">
-                        <p>Subtotal</p>
+                        <p>Cart Subtotal</p>
                         <p className="font-bold">${cartTotal}</p>
                     </div>
                     {cart.map((item: Book) => <CartSidebarItem book={item} key={`${item.title}-sidebar`}/>)}
