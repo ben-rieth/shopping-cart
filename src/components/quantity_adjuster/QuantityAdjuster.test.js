@@ -109,4 +109,21 @@ describe('Test QuantityAdjuster component', () => {
 
         expect(input.value).toEqual('1');
     });
+
+    it('does not have focus on input after user hits enter', () => {
+        render(
+            <QuantityAdjuster 
+                initialQuantity={2} 
+                onAddPress={jest.fn()} 
+                onRemovePress={jest.fn()}
+                onInputChange={jest.fn()} />
+        );
+
+        const input = screen.getByRole('textbox');
+
+        input.focus();
+        userEvent.keyboard('{Enter}');
+
+        expect(input).not.toHaveFocus();
+    })
 })

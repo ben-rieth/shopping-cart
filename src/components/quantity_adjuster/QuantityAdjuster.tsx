@@ -1,4 +1,4 @@
-import { ChangeEvent, useState} from 'react';
+import { ChangeEvent, KeyboardEvent, useState} from 'react';
 import AddIcon from './../../assets/images/add.svg';
 import RemoveIcon from './../../assets/images/remove.svg';
 import DeleteIcon from './../../assets/images/delete.svg';
@@ -32,6 +32,13 @@ const QuantityAdjuster = ({initialQuantity, onAddPress, onRemovePress, onInputCh
         onRemovePress();
     }
 
+    const blurIfEnterPress = (event: KeyboardEvent) => {
+        if(event.key === "Enter") {
+            const target = event.target as HTMLElement;
+            target.blur();
+        }
+    }
+
     return (
         <div className="flex items-center gap-2">
             <button>
@@ -45,6 +52,7 @@ const QuantityAdjuster = ({initialQuantity, onAddPress, onRemovePress, onInputCh
                 value={value} 
                 onChange={handleChange}
                 onBlur={() => onInputChange(value)}
+                onKeyDown={blurIfEnterPress}
                 className="w-10 h-10 text-center text-xl border border-slate-900"/>
             <button>
                 <img src={AddIcon} 
