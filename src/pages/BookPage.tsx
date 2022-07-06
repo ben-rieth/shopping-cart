@@ -56,10 +56,12 @@ const BookPage = () => {
                                         {/* "md:col-start-3 md:row-start-1 md:row-span-3 md:place-self-center md:my-2"> */}
 
                             <p className="text-3xl text-center my-1 font-merienda">${book.price}</p>
-                            <div className="flex flex-col gap-5 justify-center md:flex-row">
-                                <QuantityAdjuster 
-                                    initialQuantity={quantity} 
-                                    onInputChange={(newQuantity) => setQuantity(newQuantity)}/>
+                            <div className="flex gap-5 justify-center md:flex-row">
+                                <div className="hidden md:block">
+                                    <QuantityAdjuster 
+                                        initialQuantity={quantity} 
+                                        onInputChange={(newQuantity) => setQuantity(newQuantity)}/>
+                                </div>
                                 <Button text="Add to Cart" onClick={addToCartClick}/>
                             </div>
                             
