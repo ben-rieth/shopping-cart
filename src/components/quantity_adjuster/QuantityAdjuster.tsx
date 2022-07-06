@@ -41,7 +41,7 @@ const QuantityAdjuster = ({initialQuantity, onAddPress, onRemovePress, onInputCh
 
     return (
         <div className="flex items-center gap-2">
-            <button>
+            <button data-cy="remove-btn">
                 <img src={value === 1 ? DeleteIcon : RemoveIcon} 
                     alt="remove" 
                     className="w-10 h-10" 
@@ -54,7 +54,7 @@ const QuantityAdjuster = ({initialQuantity, onAddPress, onRemovePress, onInputCh
                 onBlur={() => onInputChange(value)}
                 onKeyDown={blurIfEnterPress}
                 className="w-10 h-10 text-center text-xl border border-slate-900"/>
-            <button>
+            <button data-cy="add-btn">
                 <img src={AddIcon} 
                     alt="add" 
                     className="w-10 h-10" 
