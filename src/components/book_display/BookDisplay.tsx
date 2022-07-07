@@ -16,9 +16,15 @@ const BookDisplay = ({book}: BookProps) => {
             </Link>
             <div className="h-[2px] w-full bg-gradient-to-tl from-[#F2BF5E] via-[#F28705] to-[#BF4904]" />
             <Link to={bookPage}>
-                <p className="font-bold text-center cursor-pointer text-cyan-700 text-md leading-tight lg:text-lg">{book.title}</p>
+
+                <p className="font-bold text-center cursor-pointer text-cyan-700 text-md leading-tight underline-offset-2
+                                lg:text-lg hover:underline"
+                >
+                    {book.title}
+                </p>
+
             </Link>  
-            <p className="lg:text-lg">${book.price}</p>
+            <p className="font-medium font-merienda lg:text-lg">${book.price}</p>
             <div className="absolute top-0 right-0 hidden">
                 <img src={AddToCartIcon} alt="cart" className="w-8" />
             </div>
