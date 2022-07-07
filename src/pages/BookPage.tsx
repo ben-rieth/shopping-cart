@@ -44,14 +44,16 @@ const BookPage = () => {
                     <div className="flex flex-col items-center mx-5 max-w-5xl
                                     md:grid md:grid-cols[1fr_5fr] md:grid-rows[2fr_5fr_.5fr_5fr_.5fr_5fr] md:gap-x-10 md:mx-auto md:ju">
                         <div className="flex flex-col md:col-start-2 
-                                        md:col-end-3 md:row-start-1 md:border-b-2">
-                                <h2 className="text-3xl font-merienda text-center truncate
+                                        md:col-end-3 md:row-start-1 md:border-b-2 min-w-0">
+                            <div className="flex justify-start items-center gap-2">
+                                <h2 className="text-3xl font-merienda text-center whitespace-nowrap
                                                 md:text-start">
-                                    {book.title}
-                                    <span className="hidden md:inline uppercase font-semibold text-slate-400 text-base font-sans">
-                                        &nbsp;&nbsp;{getBookGenreString()}
-                                    </span>
+                                    {book.title}  
                                 </h2>
+                                <p className="hidden md:inline uppercase font-semibold text-slate-400 text-base font-sans truncate">
+                                    {getBookGenreString()}
+                                </p>
+                            </div>
                             <p className="text-xl text-center 
                                             md:text-start">
                                 {book.author}
@@ -61,7 +63,7 @@ const BookPage = () => {
 
                         <img src={book.imageURL} 
                             alt="cover" 
-                            className="w-36 h-56 my-2 
+                            className="w-36 h-56 my-2
                                         md:col-start-1 md:row-span-2 md:justify-self-end lg:w-48 lg:h-72"/>
 
                         <div className="flex flex-col justify-center gap-2 bg-black/20 p-5 rounded-xl
