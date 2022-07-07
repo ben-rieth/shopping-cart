@@ -1,3 +1,5 @@
+import Genre from "./Genre";
+
 type Book = {
     id: string;
     title: string;
@@ -5,7 +7,8 @@ type Book = {
     price: number;
     imageURL: string;
     quantity?: number;
-    gridIndex?: number;
+    gridIndex? : number;
+    genre?: Genre[];
 }
 
 export default Book;
