@@ -36,11 +36,11 @@ module.exports = {
         'sm': '530px',
       },
 
-
+      fontFamily: {
+        'merienda': ["merienda", ...defaultTheme.fontFamily.sans],
+      }
     },
-    fontFamily: {
-      'merienda': ["merienda", ...defaultTheme.fontFamily.sans],
-    }
+    
   },
   plugins: [
     require('@tailwindcss/line-clamp')

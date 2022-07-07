@@ -27,6 +27,15 @@ const BookPage = () => {
         navigate(-1);
     }
 
+    const getBookGenreString= () : string => {
+        let genreString = '';
+
+        for (let genre of book!.genre) {
+            genreString = genreString.concat(`${genre} `)
+        }
+        return genreString;
+    }
+
     if (book) {
         return (
             <div className="flex">
@@ -36,14 +45,18 @@ const BookPage = () => {
                                     md:grid md:grid-cols[1fr_5fr] md:grid-rows[2fr_5fr_.5fr_5fr] md:gap-x-10 md:mx-auto md:ju">
                         <div className="flex flex-col md:col-start-2 
                                         md:col-end-3 md:row-start-1 md:border-b-2">
-                            <h2 className="text-3xl font-merienda text-center pt-5 
-                                            md:text-start ">
-                                {book.title}
-                            </h2>
+                                <h2 className="text-3xl font-merienda text-center pt-5 
+                                                md:text-start ">
+                                    {book.title}
+                                    <span className="hidden md:inline uppercase font-semibold text-slate-400 text-base font-sans">
+                                        &nbsp;&nbsp;{getBookGenreString()}
+                                    </span>
+                                </h2>
                             <p className="text-xl text-center 
                                             md:text-start">
                                 {book.author}
                             </p>
+                            
                         </div>
 
                         <img src={book.imageURL} 
