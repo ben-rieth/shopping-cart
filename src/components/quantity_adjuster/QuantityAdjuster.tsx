@@ -12,6 +12,7 @@ type Props = {
 const QuantityAdjuster = ({initialQuantity, showDeleteIcon=true, onInputChange}: Props) => {
 
     const [value, setValue] = useState<number>(initialQuantity);
+    const [shake, setShake] = useState<boolean>(false);
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         if (/\D+/.test(event.target.value)) {
@@ -30,6 +31,9 @@ const QuantityAdjuster = ({initialQuantity, showDeleteIcon=true, onInputChange}:
         if(showDeleteIcon || value > 1) {
             setValue(value - 1);
             onInputChange(value - 1);
+        } else {
+            setShake(true);
+            setTimeout(() => setShake(false), 700);
         }
     }
 
@@ -45,7 +49,7 @@ const QuantityAdjuster = ({initialQuantity, showDeleteIcon=true, onInputChange}:
             <button data-cy="remove-btn">
                 <img src={value === 1 && showDeleteIcon ? DeleteIcon : RemoveIcon} 
                     alt="remove" 
-                    className="w-10 h-10" 
+                    className={`w-10 h-10 ${shake && 'animate-shake-no'}`}
                     onClick={removeOneFromValue}/>
             </button>
             <input 
