@@ -8,7 +8,7 @@ type Book = {
     imageURL: string;
     quantity?: number;
     gridIndex? : number;
-    genre?: Genre[];
+    genre: Genre[];
 }
 
 export default Book;

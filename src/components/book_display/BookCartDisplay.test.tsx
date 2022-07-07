@@ -14,7 +14,8 @@ describe("Testing BookCartDisplay Component", () => {
             title: "Book Title", 
             author: "Book Author", 
             price: 6.99, 
-            imageURL: CoverImage
+            imageURL: CoverImage,
+            genre: []
         };
 
         render(
