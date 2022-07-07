@@ -51,6 +51,7 @@ const QuantityAdjuster = ({initialQuantity, onInputChange}: Props) => {
                 onChange={handleChange}
                 onBlur={() => onInputChange(value)}
                 onKeyDown={blurIfEnterPress}
+                data-cy="quantity-input"
                 className="w-10 h-10 text-center text-xl border border-slate-900"/>
             <button data-cy="add-btn">
                 <img src={AddIcon} 

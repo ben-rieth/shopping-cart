@@ -1,5 +1,7 @@
 ///<reference types="cypress" />
 
+import { verify } from "crypto";
+
 describe('Testing User Adding an Item to Cart', () => {
   it('add and remove item from cart', () => {
     cy.visit('localhost:3000')
@@ -50,7 +52,33 @@ describe('Testing User Adding an Item to Cart', () => {
 
     cy.get('@cartIcon').click();
     cy.get('[data-cy="cart-item-listing"]').should('have.length', 3);
-
-
   });
+
+  it.only('can change item quantity on book page and in the cart (on non-mobile screens)', () => {
+    cy.visit('localhost:3000');
+    cy.contains('button', 'Browse').click();
+    cy.contains('Catch-22').click();
+
+
+    cy.get('[data-cy="quantity-input"]').as('input').should('have.value', '1');
+
+    cy.get('[data-cy="add-btn"]').as('addBtn').click().click();
+    cy.get('@input').should('have.value', '3');
+
+    cy.get('[data-cy="btn-add-to-cart"]').as('addCartBtn').click();
+
+    cy.get('[data-cy="cart-icon"]').as('cartIcon').should('have.text', '1').click();
+
+    cy.get('@input').should('have.value', '3');
+    cy.get('@addBtn').click().click();
+    cy.get('@input').should('have.value', '5');
+
+    cy.go('back').contains('Catch-22').click();
+    cy.get('@addBtn').click();
+    cy.get('@input').should('have.value', '2');
+    cy.get('@addCartBtn').click();
+
+    cy.get('@cartIcon').should('have.text', '1').click();
+    cy.get('@input').should('have.value', '7');
+  })
 })
