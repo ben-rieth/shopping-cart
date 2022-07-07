@@ -5,10 +5,11 @@ import DeleteIcon from './../../assets/images/delete.svg';
 
 type Props = {
     initialQuantity: number;
+    showDeleteIcon?: boolean;
     onInputChange: (newQuantity: number) => void;
 }
 
-const QuantityAdjuster = ({initialQuantity, onInputChange}: Props) => {
+const QuantityAdjuster = ({initialQuantity, showDeleteIcon=true, onInputChange}: Props) => {
 
     const [value, setValue] = useState<number>(initialQuantity);
 
@@ -26,8 +27,10 @@ const QuantityAdjuster = ({initialQuantity, onInputChange}: Props) => {
     }
 
     const removeOneFromValue = () => {
-        setValue(value - 1);
-        onInputChange(value - 1);
+        if(showDeleteIcon || value > 1) {
+            setValue(value - 1);
+            onInputChange(value - 1);
+        }
     }
 
     const blurIfEnterPress = (event: KeyboardEvent) => {
@@ -40,7 +43,7 @@ const QuantityAdjuster = ({initialQuantity, onInputChange}: Props) => {
     return (
         <div className="flex items-center gap-2">
             <button data-cy="remove-btn">
-                <img src={value === 1 ? DeleteIcon : RemoveIcon} 
+                <img src={value === 1 && showDeleteIcon ? DeleteIcon : RemoveIcon} 
                     alt="remove" 
                     className="w-10 h-10" 
                     onClick={removeOneFromValue}/>

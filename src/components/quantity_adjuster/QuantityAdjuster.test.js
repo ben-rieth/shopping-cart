@@ -9,8 +9,6 @@ describe('Test QuantityAdjuster component', () => {
         render(
             <QuantityAdjuster 
                 initialQuantity={2} 
-                onAddPress={jest.fn()} 
-                onRemovePress={jest.fn()}
                 onInputChange={jest.fn()} />
         );
 
@@ -31,8 +29,6 @@ describe('Test QuantityAdjuster component', () => {
         render(
             <QuantityAdjuster 
                 initialQuantity={1} 
-                onAddPress={jest.fn()} 
-                onRemovePress={jest.fn()}
                 onInputChange={jest.fn()} />
         );
 
@@ -46,8 +42,6 @@ describe('Test QuantityAdjuster component', () => {
         render(
             <QuantityAdjuster 
                 initialQuantity={1} 
-                onAddPress={jest.fn()} 
-                onRemovePress={jest.fn()}
                 onInputChange={jest.fn()} />
         );
 
@@ -63,8 +57,6 @@ describe('Test QuantityAdjuster component', () => {
         render(
             <QuantityAdjuster 
                 initialQuantity={1} 
-                onAddPress={jest.fn()} 
-                onRemovePress={jest.fn()}
                 onInputChange={jest.fn()} />
         );
 
@@ -80,8 +72,6 @@ describe('Test QuantityAdjuster component', () => {
         render(
             <QuantityAdjuster 
                 initialQuantity={2} 
-                onAddPress={jest.fn()} 
-                onRemovePress={jest.fn()}
                 onInputChange={jest.fn()} />
         );
 
@@ -97,8 +87,6 @@ describe('Test QuantityAdjuster component', () => {
         render(
             <QuantityAdjuster 
                 initialQuantity={2} 
-                onAddPress={jest.fn()} 
-                onRemovePress={jest.fn()}
                 onInputChange={jest.fn()} />
         );
 
@@ -113,9 +101,7 @@ describe('Test QuantityAdjuster component', () => {
     it('does not have focus on input after user hits enter', () => {
         render(
             <QuantityAdjuster 
-                initialQuantity={2} 
-                onAddPress={jest.fn()} 
-                onRemovePress={jest.fn()}
+                initialQuantity={2}
                 onInputChange={jest.fn()} />
         );
 
@@ -125,5 +111,45 @@ describe('Test QuantityAdjuster component', () => {
         userEvent.keyboard('{Enter}');
 
         expect(input).not.toHaveFocus();
+    });
+
+    it('does not show delete icon if showDeleteIcon prop is false and quantity is 1', () => {
+        render(
+            <QuantityAdjuster 
+                initialQuantity={1}
+                showDeleteIcon={false}
+                onInputChange={jest.fn()} />
+        );
+
+        const removeBtn = screen.getByAltText('remove');
+        const addBtn = screen.getByAltText('add');
+
+        expect(removeBtn).toHaveAttribute('src', 'remove.svg');
+
+        userEvent.click(addBtn);
+        expect(removeBtn).toHaveAttribute('src', 'remove.svg');
+
+        userEvent.click(removeBtn);
+        expect(removeBtn).toHaveAttribute('src', 'remove.svg');
+    });
+
+    it('does not let user go below quantity 1 when showDeleteIcon prop is false', () => {
+        render(
+            <QuantityAdjuster 
+                initialQuantity={2}
+                showDeleteIcon={false}
+                onInputChange={jest.fn()} />
+        );
+
+        const removeBtn = screen.getByAltText('remove');
+        const input = screen.getByRole('textbox');
+
+        userEvent.click(removeBtn);
+
+        expect(input.value).toEqual('1');
+
+        userEvent.click(removeBtn);
+
+        expect(input.value).toEqual('1');
     })
 })

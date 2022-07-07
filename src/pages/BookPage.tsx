@@ -60,6 +60,7 @@ const BookPage = () => {
                                 <div className="hidden md:block">
                                     <QuantityAdjuster 
                                         initialQuantity={quantity} 
+                                        showDeleteIcon={false}
                                         onInputChange={(newQuantity) => setQuantity(newQuantity)}/>
                                 </div>
                                 <Button text="Add to Cart" onClick={addToCartClick}/>

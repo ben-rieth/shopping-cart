@@ -54,7 +54,7 @@ describe('Testing User Adding an Item to Cart', () => {
     cy.get('[data-cy="cart-item-listing"]').should('have.length', 3);
   });
 
-  it.only('can change item quantity on book page and in the cart (on non-mobile screens)', () => {
+  it('can change item quantity on book page and in the cart (on non-mobile screens)', () => {
     cy.visit('localhost:3000');
     cy.contains('button', 'Browse').click();
     cy.contains('Catch-22').click();
