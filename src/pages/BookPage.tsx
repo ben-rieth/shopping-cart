@@ -42,11 +42,11 @@ const BookPage = () => {
                 <div className="w-screen">
                     <Header />
                     <div className="flex flex-col items-center mx-5 max-w-5xl
-                                    md:grid md:grid-cols[1fr_5fr] md:grid-rows[2fr_5fr_.5fr_5fr] md:gap-x-10 md:mx-auto md:ju">
+                                    md:grid md:grid-cols[1fr_5fr] md:grid-rows[2fr_5fr_.5fr_5fr_.5fr_5fr] md:gap-x-10 md:mx-auto md:ju">
                         <div className="flex flex-col md:col-start-2 
                                         md:col-end-3 md:row-start-1 md:border-b-2">
-                                <h2 className="text-3xl font-merienda text-center pt-5 
-                                                md:text-start ">
+                                <h2 className="text-3xl font-merienda text-center truncate
+                                                md:text-start">
                                     {book.title}
                                     <span className="hidden md:inline uppercase font-semibold text-slate-400 text-base font-sans">
                                         &nbsp;&nbsp;{getBookGenreString()}
@@ -66,7 +66,6 @@ const BookPage = () => {
 
                         <div className="flex flex-col justify-center gap-2 bg-black/20 p-5 rounded-xl
                                         md:col-start-2 md:row-start-2 md:self-start md:h-full" >
-                                        {/* "md:col-start-3 md:row-start-1 md:row-span-3 md:place-self-center md:my-2"> */}
 
                             <p className="text-3xl text-center my-1 font-merienda">${book.price}</p>
                             <div className="flex gap-5 justify-center md:flex-row">
