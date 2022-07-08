@@ -10,7 +10,6 @@ import EastOfEdenCover from "./../assets/images/covers/east-of-eden.webp";
 import InvisibleManCover from "./../assets/images/covers/invisible-man.webp";
 import PridePrejudiceCover from "./../assets/images/covers/pride-prejudice.webp";
 import StrangerCover from './../assets/images/covers/stranger.webp';
-import Genre from "../services/types/Genre";
 
 const availableBooks: Book[] = [
     {
