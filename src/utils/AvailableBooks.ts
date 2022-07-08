@@ -73,7 +73,7 @@ const availableBooks: Book[] = [
         imageURL: CatcherCover,
         genre: [
             "Realistic",
-            "Coming Of Age"
+            "Coming-Of-Age"
         ]
     },
     {
@@ -115,7 +115,7 @@ const availableBooks: Book[] = [
         price: 7.99,
         imageURL: InvisibleManCover,
         genre: [
-            "Coming of Age",
+            "Coming-Of-Age",
             "African-American",
             "Social-Commentary"
         ]

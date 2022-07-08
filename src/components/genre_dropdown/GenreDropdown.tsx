@@ -8,15 +8,17 @@ type Props = {
 const GenreDropdown = ({value, onValueChange} : Props) => {
 
     return (
-        <label>
-            Search By Genre:&nbsp;&nbsp;
-            <select name="genre" value={value} onChange={onValueChange}>
+        <label className="text-xl font-sans">
+            <span className="font-merienda">
+                Search By Genre:&nbsp;&nbsp;
+            </span>
+            <select name="genre" value={value} onChange={onValueChange} className="p-2 rounded">
                 <option value="all">Show All</option>
                 <optgroup label="Genres">
                     <option value="Absurdist">Absurdist</option>
                     <option value="African-American">African American</option>
                     <option value="Comedy">Comedy</option>
-                    <option value="Coming-of-Age">Coming Of Age</option>
+                    <option value="Coming-Of-Age">Coming Of Age</option>
                     <option value="Dystopian">Dystopian</option>
                     <option value="Historical">Historical</option>
                     <option value="Modernist">Modernist</option>

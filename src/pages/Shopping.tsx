@@ -33,7 +33,7 @@ const Shopping = () => {
                         links={[{to: '/', title: 'Home'}]} 
                         currentPage="Browse" />
                 </div>
-                <div>
+                <div className="flex bg-black/30 p-2 rounded-lg w-fit mx-auto">
                     <GenreDropdown value={selectedGenre} onValueChange={handleGenreChange}/>
                 </div>
                 <BookGrid books={bookList} />
