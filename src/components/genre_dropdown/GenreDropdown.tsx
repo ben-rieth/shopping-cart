@@ -20,8 +20,10 @@ const GenreDropdown = ({value, onValueChange} : Props) => {
                     <option value="Comedy">Comedy</option>
                     <option value="Coming-Of-Age">Coming Of Age</option>
                     <option value="Dystopian">Dystopian</option>
+                    <option value="Great-American-Novel">Great American Novel</option>
                     <option value="Historical">Historical</option>
                     <option value="Modernist">Modernist</option>
+                    <option value="Philosophical">Philosophical</option>
                     <option value="Realistic">Realistic</option>
                     <option value="Romance">Romance</option>
                     <option value="Satire">Satire</option>
