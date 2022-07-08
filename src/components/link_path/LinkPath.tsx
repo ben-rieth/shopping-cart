@@ -16,13 +16,13 @@ const LinkPath = ({ links, currentPage }: Props) => {
                 return (
                     <>
                         <Link to={link.to} key={link.title}>
-                            <p className="hover:underline underline-offset-2">{link.title}</p>
+                            <p className="hover:underline underline-offset-2 text-cyan-700 font-semibold">{link.title}</p>
                         </Link>
                         <p key={`arrow-${index}`}> &gt; </p>
                     </>
                 );
             })}
-            <p key={currentPage}>{currentPage}</p>
+            <p key={currentPage} className="font-semibold">{currentPage}</p>
         </nav>
     );
 }
