@@ -13,7 +13,7 @@ const Header = () => {
                     alt="menu" 
                     className="cursor-pointer w-12 xl:w-16" 
                     onClick={() => setSidebarVisible(true)}/>
-                <h1 className="text-3xl text-center font-merienda font-semibold md:text-4xl xl:text-5xl text-transparent bg-clip-text bg-gradient-to-tl from-[#F28705] to-[#B91C1C]">New Leaf Books</h1>
+                <h1 className="text-3xl text-center font-merienda font-semibold md:text-4xl xl:text-5xl text-transparent bg-clip-text bg-gradient-to-t from-[#F28705] to-[#B91C1C]">New Leaf Books</h1>
                 <CartIcon />
             </div>
             <Sidebar isVisible={sidebarVisible} onCloseClick={() => setSidebarVisible(false)}/>
