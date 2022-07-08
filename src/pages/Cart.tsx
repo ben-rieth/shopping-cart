@@ -8,6 +8,7 @@ import Book from "../services/types/Book";
 
 import CartEmptyIcon from './../assets/images/cart.svg';
 import { Link } from "react-router-dom";
+import LinkPath from "../components/link_path/LinkPath";
 
 const Cart = () => {
     const { cart } = useContext(CartContext);
@@ -17,6 +18,7 @@ const Cart = () => {
     return (
         <div>
             <Header />
+            <LinkPath links={[{to: '/', title: 'Home'}]} currentPage="Cart" />
             <div className="flex flex-col justify-center items-center my-4 px-5 gap-2">
                 {cart.length > 0 ?
                     <>
