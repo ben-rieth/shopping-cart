@@ -3,6 +3,7 @@ import Home from './../../pages/Home';
 import Shopping from './../../pages/Shopping';
 import BookPage from './../../pages/BookPage';
 import Cart from './../../pages/Cart';
+import Contact from '../../pages/Contact';
 
 const RouteSwitch = () => {
     return (
@@ -13,6 +14,7 @@ const RouteSwitch = () => {
                 <Route path="/browse/g/:urlGenre" element={<Shopping />} />
                 <Route path="/browse/:bookTitle/:bookId" element={<BookPage />} />
                 <Route path="/cart" element={<Cart />} />
+                <Route path="/contact" element={<Contact />} />
             </Routes>
         </BrowserRouter>
     );
