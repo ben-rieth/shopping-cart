@@ -2,6 +2,7 @@ import { useContext, useState } from 'react';
 import { useParams, useNavigate } from 'react-router';
 import Button from '../components/button/Button';
 import CartSidebar from '../components/cart_sidebar/CartSidebar';
+import GenreLink from '../components/genre_link/GenreLink';
 import LinkPath from '../components/link_path/LinkPath';
 import QuantityAdjuster from '../components/quantity_adjuster/QuantityAdjuster';
 import { CartContext } from '../services/context/CartContext';
@@ -28,15 +29,6 @@ const BookPage = () => {
         navigate(-1);
     }
 
-    const getBookGenreString= () : string => {
-        let genreString = '';
-
-        for (let genre of book!.genre) {
-            genreString = genreString.concat(`${genre} `)
-        }
-        return genreString;
-    }
-
     if (book) {
         return (
             <div className="flex">
@@ -50,18 +42,13 @@ const BookPage = () => {
                     </div>
                     
                     <div className="flex flex-col items-center mx-5 max-w-5xl
-                                    md:grid md:grid-cols[1fr_5fr] md:grid-rows[2fr_5fr_.5fr_5fr_.5fr_5fr] md:gap-x-10 md:mx-auto md:ju">
+                                    md:grid md:grid-cols[1fr_5fr] md:grid-rows[2fr_5fr_.5fr_.5fr_5fr_.5fr_5fr] md:gap-x-10 md:mx-auto md:ju">
                         <div className="flex flex-col md:col-start-2 
                                         md:col-end-3 md:row-start-1 md:border-b-2 min-w-0">
-                            <div className="flex justify-start items-center gap-2">
-                                <h2 className="text-3xl font-merienda text-center whitespace-nowrap
-                                                md:text-start">
-                                    {book.title}  
-                                </h2>
-                                <p className="hidden md:inline uppercase font-semibold text-slate-400 text-base font-sans truncate">
-                                    {getBookGenreString()}
-                                </p>
-                            </div>
+                            <h2 className="text-3xl font-merienda text-center whitespace-nowrap
+                                            md:text-start">
+                                {book.title}  
+                            </h2>
                             <p className="text-xl text-center 
                                             md:text-start">
                                 {book.author}
@@ -72,7 +59,7 @@ const BookPage = () => {
                         <img src={book.imageURL} 
                             alt="cover" 
                             className="w-36 h-56 my-2
-                                        md:col-start-1 md:row-span-2 md:justify-self-end lg:w-48 lg:h-72"/>
+                                        md:col-start-1 md:row-span-3 md:justify-self-end lg:w-48 lg:h-72"/>
 
                         <div className="flex flex-col justify-center gap-2 bg-black/20 p-5 rounded-xl
                                         md:col-start-2 md:row-start-2 md:self-start md:h-full" >
@@ -87,14 +74,17 @@ const BookPage = () => {
                                 </div>
                                 <Button text="Add to Cart" onClick={addToCartClick}/>
                             </div>
-                            
-
                         </div>
 
-                        <div className="h-1 m-4 w-screen bg-gradient-to-tl from-[#F2BF5E] via-[#F28705] to-[#BF4904] 
-                                        md:col-start-1 md:col-span-3 md:row-start-3 md:w-full md:mx-auto"/>
+                        <div className="flex flex-wrap items-center justify-center gap-x-2 md:col-start-2 md:row-start-3 md:justify-start">
+                            <p className="font-semibold">Genres: </p>
+                            {book.genre.map((genre) => <GenreLink genre={genre} key={genre}/>)}
+                        </div> 
 
-                        <div className="mx-10 my-4 md:col-start-1 md:col-span-2 md:row-start-4 md:my-0">
+                        <div className="h-1 m-4 w-screen bg-gradient-to-tl from-[#F2BF5E] via-[#F28705] to-[#BF4904] 
+                                        md:col-start-1 md:col-span-3 md:row-start-4 md:w-full md:mx-auto"/>
+
+                        <div className="mx-10 my-4 md:col-start-1 md:col-span-2 md:row-start-5 md:my-0">
                             <h3 className="text-2xl  text-center font-merienda">
                                 Summary
                             </h3>
