@@ -3,6 +3,7 @@ import Home from './../../pages/Home';
 import Shopping from './../../pages/Shopping';
 import BookPage from './../../pages/BookPage';
 import Cart from './../../pages/Cart';
+import ShopGenrePage from '../../pages/ShopGenrePage';
 
 const RouteSwitch = () => {
     return (
@@ -11,6 +12,7 @@ const RouteSwitch = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/browse" element={<Shopping />} />
                 <Route path="/browse/:bookTitle/:bookId" element={<BookPage />} />
+                <Route path="/browse/g/:genre" element={<ShopGenrePage />} />
                 <Route path="/cart" element={<Cart />} />
             </Routes>
         </BrowserRouter>

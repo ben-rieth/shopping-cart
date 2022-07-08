@@ -20,9 +20,9 @@ const availableBooks: Book[] = [
         price: 8.99,
         imageURL: Catch22Cover,
         genre: [
-            Genre.War,
-            Genre.Satire,
-            Genre.Absurdist
+            "War",
+            "Satire",
+            "Absurdist"
         ]
     },
     {
@@ -32,7 +32,7 @@ const availableBooks: Book[] = [
         price: 9.99,
         imageURL: UlyssesCover,
         genre: [
-            Genre.Modernist
+            "Modernist"
         ]
     },
     {
@@ -42,7 +42,7 @@ const availableBooks: Book[] = [
         price: 10.99,
         imageURL: DonQuixoteCover,
         genre: [
-            Genre.Comedy
+            "Comedy"
         ]
     },
     {
@@ -52,8 +52,8 @@ const availableBooks: Book[] = [
         price: 6.99,
         imageURL: GatsbyCover,
         genre: [
-            Genre.Tragedy,
-            Genre.GreatAmericanNovel
+            "Tragedy",
+            "Great-American-Novel"
         ]
     },
     {
@@ -63,7 +63,7 @@ const availableBooks: Book[] = [
         price: 10.99,
         imageURL: WarAndPeaceCover,
         genre: [
-            Genre.Historical
+            "Historical"
         ]
     },
     {
@@ -73,8 +73,8 @@ const availableBooks: Book[] = [
         price: 7.99,
         imageURL: CatcherCover,
         genre: [
-            Genre.Realistic,
-            Genre.ComingOfAge
+            "Realistic",
+            "Coming Of Age"
         ]
     },
     {
@@ -84,7 +84,7 @@ const availableBooks: Book[] = [
         price: 8.99,
         imageURL: PridePrejudiceCover,
         genre: [
-            Genre.Romance
+            "Romance"
         ]
     },
     {
@@ -94,8 +94,8 @@ const availableBooks: Book[] = [
         price: 7.99,
         imageURL: NineteenEightyFourCover,
         genre :[
-            Genre.SocialCommentary,
-            Genre.Dystopian
+            "Social-Commentary",
+            "Dystopian"
         ]
     },
     {
@@ -105,8 +105,8 @@ const availableBooks: Book[] = [
         price: 11.99,
         imageURL: EastOfEdenCover,
         genre: [
-            Genre.Romance,
-            Genre.Tragedy
+            "Romance",
+            "Tragedy"
         ]
     },
     {
@@ -116,9 +116,9 @@ const availableBooks: Book[] = [
         price: 7.99,
         imageURL: InvisibleManCover,
         genre: [
-            Genre.ComingOfAge,
-            Genre.AfricanAmerican,
-            Genre.SocialCommentary
+            "Coming of Age",
+            "African-American",
+            "Social-Commentary"
         ]
     },
     {
@@ -128,8 +128,8 @@ const availableBooks: Book[] = [
         price: 6.99,
         imageURL: StrangerCover,
         genre: [
-            Genre.Absurdist,
-            Genre.Philosophical
+            "Absurdist",
+            "Philosophical"
         ]
     }
 
