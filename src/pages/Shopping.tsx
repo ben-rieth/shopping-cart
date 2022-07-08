@@ -9,7 +9,11 @@ const Shopping = () => {
         <div className="flex">
             <div className="w-screen">
                 <Header />
-                <LinkPath links={[{to: '/', title: 'Home'}]} currentPage="Browse" />
+                <div className="hidden md:block">
+                    <LinkPath 
+                        links={[{to: '/', title: 'Home'}]} 
+                        currentPage="Browse" />
+                </div>
                 <BookGrid books={availableBooks} />
             </div>
             <CartSidebar />

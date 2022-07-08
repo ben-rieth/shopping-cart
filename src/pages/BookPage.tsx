@@ -42,7 +42,13 @@ const BookPage = () => {
             <div className="flex">
                 <div className="w-screen">
                     <Header />
-                    <LinkPath links={[{to: '/', title: 'Home'}, {to: '/browse', title: 'Browse'}]} currentPage={book.title}/>
+
+                    <div className="hidden md:block">
+                        <LinkPath 
+                            links={[{to: '/', title: 'Home'}, {to: '/browse', title: 'Browse'}]} 
+                            currentPage={book.title} />
+                    </div>
+                    
                     <div className="flex flex-col items-center mx-5 max-w-5xl
                                     md:grid md:grid-cols[1fr_5fr] md:grid-rows[2fr_5fr_.5fr_5fr_.5fr_5fr] md:gap-x-10 md:mx-auto md:ju">
                         <div className="flex flex-col md:col-start-2 

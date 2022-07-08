@@ -18,7 +18,13 @@ const Cart = () => {
     return (
         <div>
             <Header />
-            <LinkPath links={[{to: '/', title: 'Home'}]} currentPage="Cart" />
+            
+            <div className="hidden md:block">
+                <LinkPath 
+                links={[{to: '/', title: 'Home'}]} 
+                currentPage="Cart" />
+            </div>
+
             <div className="flex flex-col justify-center items-center my-4 px-5 gap-2">
                 {cart.length > 0 ?
                     <>
