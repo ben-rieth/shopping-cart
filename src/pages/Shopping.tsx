@@ -6,10 +6,17 @@ import LinkPath from "../components/link_path/LinkPath";
 import { ChangeEvent, useState } from "react";
 import Book from "../services/types/Book";
 import GenreDropdown from "../components/genre_dropdown/GenreDropdown";
+import { useParams } from "react-router-dom";
 
 const Shopping = () => {
-    const [selectedGenre, setSelectedGenre] = useState<string>("all");
-    const [bookList, setBookList] = useState<Book[]>(availableBooks);
+    const {urlGenre} = useParams();
+
+    const getBookList = (genre: string) => {
+        return availableBooks.filter((book) => book.genre.includes(genre));
+    }
+
+    const [selectedGenre, setSelectedGenre] = useState<string>(urlGenre ? urlGenre : "all");
+    const [bookList, setBookList] = useState<Book[]>(urlGenre ? getBookList(urlGenre) : availableBooks);
 
     const handleGenreChange = (event: ChangeEvent<HTMLSelectElement>) => {
         const newGenre = event.target.value;
@@ -19,7 +26,7 @@ const Shopping = () => {
             setBookList(availableBooks);
         } else {
             setBookList(
-                availableBooks.filter((book) => book.genre.includes(newGenre))
+                getBookList(newGenre)
             );
         }
     }
